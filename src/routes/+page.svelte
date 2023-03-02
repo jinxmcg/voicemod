@@ -5,22 +5,23 @@ Move da slider <br/>
     import { fade } from 'svelte/transition';
     import { tweened } from 'svelte/motion';
     
+    //fade in out the initial text
     const MIN_OPACITY = 0.2;
     const MAX_OPACITY = 0.8;
     const opacity = tweened(MIN_OPACITY);
-    
+    let hidden = false
+
     function animate(){
       opacity.set(MAX_OPACITY, { duration: 1000 })
       .then(() => opacity.set(MIN_OPACITY, { duration: 1000 }))
       .then(()=>{animate()})
     }
-    animate()
-    
-    let hidden = false
+     
     const hide = () => {
       hidden=true
       console.log("Aaa")
     }
+    animate()
 </script>
 
 {#if !hidden}
