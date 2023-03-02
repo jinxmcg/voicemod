@@ -7,3 +7,8 @@ src/routes/+page.svelte
 ```
 
 the rest of the files are added by creating the sveltekit demo project boilerplate
+
+```
+npm install
+npm run dev
+```
